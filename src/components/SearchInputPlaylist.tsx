@@ -30,7 +30,7 @@ export const SearchInputPlaylist = () => {
   return (
     <div className="flex items-center">
       <Input 
-      placeholder="What do you want to listen to? by title"
+      placeholder="What do you want to listen to?"
       onChange={(e) => {
         dispatch(setQueriedValuePlaylist(e.target.value))
       }}

@@ -20,7 +20,7 @@ const SearchInput = () => {
   }
   return ( 
     <Input 
-      placeholder="What do you want to listen to? by title"
+      placeholder="What do you want to listen to?"
       onChange={(e) => dispatch(setQueriedValue(e.target.value))}
       onKeyDown={handleInputKeyDown}
     />

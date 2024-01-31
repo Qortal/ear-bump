@@ -120,9 +120,9 @@ export const useFetchSongs = () => {
       if (!queriedValue) return
       dispatch(setIsLoadingGlobal(true))
       const offset = songListQueried.length
-      const query = `earbump_song_`
+      const identifier = `earbump_song_`
       const replaceSpacesWithUnderscore = queriedValue.toLowerCase().replace(/ /g, '_');
-      const identifier = replaceSpacesWithUnderscore
+      const query = replaceSpacesWithUnderscore
       const url = `/arbitrary/resources/search?mode=ALL&service=AUDIO&query=${query}&identifier=${identifier}&limit=20&includemetadata=true&offset=${offset}&reverse=true&excludeblocked=true&includestatus=true`
       const response = await fetch(url, {
         method: 'GET',
@@ -530,9 +530,9 @@ export const useFetchSongs = () => {
     try {
       if (!queriedValuePlaylist) return
       const offset = playlistQueried.length
-      const query = `earbump_playlist_`
+      const identifier = `earbump_playlist_`
       const replaceSpacesWithUnderscore = queriedValuePlaylist.toLowerCase().replace(/ /g, '_');
-      const identifier = replaceSpacesWithUnderscore
+      const query = replaceSpacesWithUnderscore
       const url = `/arbitrary/resources/search?mode=ALL&service=PLAYLIST&query=${query}&identifier=${identifier}&limit=20&includemetadata=false&offset=${offset}&reverse=true&excludeblocked=true&includestatus=false`
       const response = await fetch(url, {
         method: 'GET',
